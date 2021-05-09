@@ -71,7 +71,7 @@ module enc8to10(input clk,
   kcode8to10 kc2 (.datain(K237), .RD(RD), .dataout(kcodeCRC1));
 
   // CRC calculation of the packet
-  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .valid(pushin && (currentState == S1_DATA) && (datain != K285)), 
+  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .valid(pushin && (currentState == S1_DATA) && (datain[7:0] != K285)), 
               .is_S1DATA(currentState == S1_DATA) ,.crc32_out(crcResult));
 
   // State machine state variable
@@ -143,7 +143,7 @@ module enc8to10(input clk,
                       trueOutput = rearrange(outTemp);
                   end
                   pushout = 1'b1;
-                  if (datain == K285) begin
+                  if (datain[7:0] == K285) begin
                       nextState = S2_K285;
                       trueOutput = rearrange(kcodeCRC1);
                       crcData = crcResult;
