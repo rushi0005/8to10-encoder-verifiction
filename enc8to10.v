@@ -127,7 +127,7 @@ module enc8to10(input clk,
                   if (counterK281 == 'd3) begin
                       nextState = S1_DATA;
                   end
-                  if (counterK281 == 'd1) begin
+                  if (counterK281 == 'd0) begin
                       startout = 1'b1;
                   end else begin
                       startout = 1'b0;

@@ -44,30 +44,33 @@ class my_driver extends uvm_driver #(my_sequence_item);
 		this.vif.pushin <= 1'b0 ;
 		this.vif.datain_size <= req.datain_size ;
 		//$display("size is %0d",req.datain_size);
-		@(this.vif.clk);
+		@(posedge (this.vif.clk));
 		this.vif.startin <= 1'b1 ;
-		//this.vif.pushin <= 1'b1  ;
-		for(int i = 0 ; i <4; i++) begin
-			@(this.vif.clk);
+		this.vif.datain <= {1'b1,k28_1} ;
+		this.vif.pushin<= 1'b1 ;
+		@(posedge (this.vif.clk));
+		this.vif.startin <= 1'b0  ;
+		for(int i = 0 ; i <2; i++) begin
+			//@(posedge (this.vif.clk));
 			this.vif.datain <= {1'b1,k28_1} ;
 			this.vif.pushin<= 1'b1 ;
-			@(this.vif.clk);
+			@(posedge (this.vif.clk));
 			
 		end
-		for(int i = 0 ; i <req.datain.size();i++) begin
-			@(this.vif.clk);
-			this.vif.datain <= {req.cntr,req.datain[i]};
-			@(this.vif.clk);
-		end
+		//for(int i = 0 ; i <req.datain.size();i++) begin
+			@(posedge (this.vif.clk));
+			this.vif.datain <= {req.cntr,req.datain[0]};
+			//@(this.vif.clk);
+		//end
        		`uvm_info("DRIVER","Sending packet to scoreboard",UVM_NONE)
 		trans_out.write(req);	
-		@(this.vif.clk);			
+		@(posedge (this.vif.clk));			
 		this.vif.datain <= {1'b1,k28_5} ;
-		@(this.vif.clk);
+		//@(this.vif.clk);
 		for(int i = 0 ; i <10 ;i++) begin
-			@(this.vif.clk);
+			@(posedge(this.vif.clk));
 			this.vif.pushin <= 1'b0  ;
-			@(this.vif.clk);
+			//@(this.vif.clk);
 		end
 			
 	endtask
