@@ -6,6 +6,8 @@ module enc3to4 (input [2:0] datain,
 
 	assign dataout = fghj_d;
 
+  always @(*) begin
+  
     case(datain)
       0: begin 
       		fghj_d = (RD) ? 4'b0100 : 4'b1011; 
@@ -33,5 +35,4 @@ module enc3to4 (input [2:0] datain,
      	 end
     endcase
   end
-
 endmodule

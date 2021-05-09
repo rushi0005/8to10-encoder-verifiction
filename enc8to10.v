@@ -26,7 +26,8 @@ module enc8to10(input clk,
 
   wire Kbit;  // control bit
   wire RD; // running disparity    0 for -1  and 1 for 1
-  wire [31:0] crcResult, crcData;
+  wire [31:0] crcResult;
+  reg  [31:0] crcData;
   
   wire [9:0] outTemp, kcode, kcodeCRC0, kcodeCRC1, firstCRC, secondCRC, thirdCRC, fourthCRC;
   reg [9:0] trueOutput;
@@ -41,24 +42,24 @@ module enc8to10(input clk,
   runningDisparity rd (.clk(clk), .reset(reset), .dataout(trueOutput), .startin(startin), .RDout(RD), .pushout(pushout));
 
   //8/10b Encoding the data byte
-  enc5to6 ec0 (.datain(datain[4:0]), .RD(RD) .dataout(outTemp[9:4]));
-  enc3to4 ec1 (.datain(datain[7:5]), .RD(!RD), .dataout(outTemp[3:0]));
+  enc5to6 ec0 (.datain(datain[4:0]), .RD(RD), .dataout(outTemp[9:4]));
+  enc3to4 ec1 (.datain(datain[7:5]), .RD(~RD), .dataout(outTemp[3:0]));
 
   // 8/10b Encoding the first CRC byte 
-  enc5to6 ec2 (.datain(crcData[4:0]), .RD(RD) .dataout(firstCRC[9:4]));
-  enc3to4 ec3 (.datain(crcData[7:5]), .RD(!RD), .dataout(firstCRC[3:0]));
+  enc5to6 ec2 (.datain(crcData[4:0]), .RD(RD), .dataout(firstCRC[9:4]));
+  enc3to4 ec3 (.datain(crcData[7:5]), .RD(~RD), .dataout(firstCRC[3:0]));
 
   // 8/10b Encoding the second CRC byte 
-  enc5to6 ec4 (.datain(crcData[12:8]), .RD(RD) .dataout(secondCRC[9:4]));
-  enc3to4 ec5 (.datain(datain[15:13]), .RD(!RD), .dataout(secondCRC[3:0]));
+  enc5to6 ec4 (.datain(crcData[12:8]), .RD(RD), .dataout(secondCRC[9:4]));
+  enc3to4 ec5 (.datain(crcData[15:13]), .RD(~RD), .dataout(secondCRC[3:0]));
 
   // 8/10b Encoding the third CRC byte 
-  enc5to6 ec6 (.datain(crcData[20:16]), .RD(RD) .dataout(thirdCRC[9:4]));
-  enc3to4 ec7 (.datain(crcData[23:21]), .RD(!RD), .dataout(thirdCRC[3:0]));
+  enc5to6 ec6 (.datain(crcData[20:16]), .RD(RD), .dataout(thirdCRC[9:4]));
+  enc3to4 ec7 (.datain(crcData[23:21]), .RD(~RD), .dataout(thirdCRC[3:0]));
 
   // 8/10b Encoding the fourth CRC byte 
-  enc5to6 ec8 (.datain(crcData[28:24]), .RD(RD) .dataout(fourthCRC[9:4]));
-  enc3to4 ec9 (.datain(crcData[31:29]), .RD(!RD), .dataout(fourthCRC[3:0]));
+  enc5to6 ec8 (.datain(crcData[28:24]), .RD(RD), .dataout(fourthCRC[9:4]));
+  enc3to4 ec9 (.datain(crcData[31:29]), .RD(~RD), .dataout(fourthCRC[3:0]));
 
   // 8/10b Encoding the kcode 
   kcode8to10 kc0 (.datain(datain[7:0]), .RD(RD), .dataout(kcode));
@@ -135,7 +136,7 @@ module enc8to10(input clk,
           end
           S1_DATA: begin
               if (pushin) begin
-                  if (K) begin
+                  if (Kbit) begin
                       trueOutput = rearrange(kcode);
                   end else begin
                       trueOutput = rearrange(outTemp);
@@ -173,13 +174,14 @@ module enc8to10(input clk,
   end
 
 function [9:0] rearrange;
-    input data[9:0];
+    input [9:0] data;
     
     integer i;
-
+  begin
     for (i = 0; i < 10; i = i+1) begin
         rearrange[i] = data[9-i];
     end
+  end
 endfunction
 
 endmodule
@@ -190,40 +192,40 @@ endmodule
 
 // Code your testbench here
 // or browse Examples
-module tb();
-  reg clk, reset, pushin, startin;
-  reg [8:0]datain;
+// module tb();
+//   reg clk, reset, pushin, startin;
+//   reg [8:0]datain;
   
- wire pushout,startout;
-  wire [9:0] dataout;
+//  wire pushout,startout;
+//   wire [9:0] dataout;
   
- enc8to10 enc(clk,reset,pushin,datain,startin,pushout,dataout,startout);
+//  enc8to10 enc(clk,reset,pushin,datain,startin,pushout,dataout,startout);
 
-  initial begin
-    clk=0;
-    repeat(100) begin
-      #2; clk=~clk;
-    end
+//   initial begin
+//     clk=0;
+//     repeat(100) begin
+//       #2; clk=~clk;
+//     end
     
-  end
+//   end
   
-  initial begin 
-    reset=1;
-    #4; reset=0;
-  end
+//   initial begin 
+//     reset=1;
+//     #4; reset=0;
+//   end
   
-  initial begin
-    datain = 9'b0_010_10011;  // 110010 0101
+//   initial begin
+//     datain = 9'b0_010_10011;  // 110010 0101
     
-  end
+//   end
   
-  initial begin
-    $dumpfile("a.vcd");
-    $dumpvars();
-  end
+//   initial begin
+//     $dumpfile("a.vcd");
+//     $dumpvars();
+//   end
   
   
-endmodule
+// endmodule
 
 
 

@@ -10,8 +10,8 @@ module runningDisparity (input clk,
 
 	reg currentState, nextState;
 
-	always @(posedge clk or posedge rst or posedge startin) begin
-		if (rst || startin) begin
+	always @(posedge clk or posedge reset or posedge startin) begin
+		if (reset || startin) begin
 			currentState <= S0;
 		end
 		else begin
@@ -43,6 +43,8 @@ module runningDisparity (input clk,
 
 		reg [3:0] ones, zeros;
 		integer i;
+
+	begin
 		for (i = 0; i < 10; i = i+1) begin
 			if (data[i]) begin
 				ones = ones + 1;
@@ -58,5 +60,6 @@ module runningDisparity (input clk,
 		end else begin
 			countOnes = 2'd3;
 		end
+	end
 	endfunction 
 endmodule

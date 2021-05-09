@@ -13,13 +13,16 @@ package rushi ;
 	`include "my_test.sv"
 endpackage
 
+`include "enc8to10.v"
+
 module top();
 	import uvm_pkg :: * ;
 	logic clk ;
 	logic reset ;
 
 	intf int_f(clk,reset); //interface
-	dut  du(.dif(int_f)); //DUT_interface
+	enc8to10 enc(.clk(clk), .reset(reset), .pushin(int_f.pushin), .datain(int_f.datain), 
+				 .startin(int_f.startin), .pushout(int_f.pushout), .startout(startout), .dataout(int_f.dataout)); //DUT_interface
 
 	initial begin
 		clk= 0 ;
@@ -48,7 +51,7 @@ module top();
 		$dumpvars;
 	end
 endmodule
-`include "design.sv"
+
 	
 
 
