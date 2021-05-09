@@ -57,11 +57,11 @@ class my_driver extends uvm_driver #(my_sequence_item);
 			@(posedge (this.vif.clk));
 			
 		end
-		//for(int i = 0 ; i <req.datain.size();i++) begin
+		for(int i = 0 ; i <req.datain.size();i++) begin
 			@(posedge (this.vif.clk));
-			this.vif.datain <= {req.cntr,req.datain[0]};
+			this.vif.datain <= {req.cntr,req.datain[i]};
 			//@(this.vif.clk);
-		//end
+		end
        		`uvm_info("DRIVER","Sending packet to scoreboard",UVM_NONE)
 		trans_out.write(req);	
 		@(posedge (this.vif.clk));			
