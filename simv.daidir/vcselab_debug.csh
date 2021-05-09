@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-cd /home/014513031/Documents/project
+cd /home/015310906@SJSUAD.SJSU.EDU/273_project/8to10-encoder-verifiction
 
 #This ENV is used to avoid overriding current script in next vcselab run 
 setenv SNPS_VCSELAB_SCRIPT_NO_OVERRIDE  1

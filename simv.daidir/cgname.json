@@ -35,6 +35,30 @@
         "module",
         6
     ],
+    "enc3to4": [
+        "enc3to4",
+        "NcqDu",
+        "module",
+        9
+    ],
+    "enc5to6": [
+        "enc5to6",
+        "bMffR",
+        "module",
+        10
+    ],
+    "kcode8to10": [
+        "kcode8to10",
+        "d06nE",
+        "module",
+        11
+    ],
+    "enc8to10": [
+        "enc8to10",
+        "J9rH5",
+        "module",
+        12
+    ],
     "top": [
         "top",
         "Emx8S",

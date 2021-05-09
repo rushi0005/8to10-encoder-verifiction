@@ -13,7 +13,7 @@ package rushi ;
 	`include "my_test.sv"
 endpackage
 
-`include "enc8to10.v"
+`include "design_header.vh"
 
 module top();
 	import uvm_pkg :: * ;
