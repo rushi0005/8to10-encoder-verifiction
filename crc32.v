@@ -4,7 +4,8 @@ module crc32
 	input clk,
 	input rst,
 	input [7:0] crc32_in,
-    input pushin,
+    input valid,
+    input is_S1DATA,
 
 	// Module outputs
 	output [31:0] crc32_out             // 32 bit value of the CRC
@@ -287,10 +288,10 @@ module crc32
 
 	// Construct the code part " crc = (crc >> 8) ^ table[(crc & 0xff) ^ octet]; " 
     always @(posedge clk or posedge rst) begin
-        if (rst) begin
+        if (rst || !is_S1DATA) begin
 		    crc32_out_buff  <= 32'hFFFFFFFF; 
         end		
-        else if (pushin) begin 
+        else if (valid) begin 
       		crc32_out_buff  <= (crc32_out_buff >> 8) ^ crc32_table;
 		end
     end

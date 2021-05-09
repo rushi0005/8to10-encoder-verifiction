@@ -71,7 +71,8 @@ module enc8to10(input clk,
   kcode8to10 kc2 (.datain(K237), .RD(RD), .dataout(kcodeCRC1));
 
   // CRC calculation of the packet
-  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .pushin(pushin), .crc32_out(crcResult));
+  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .valid(pushin && (currentState == S1_DATA) && (datain != K285)), 
+              .is_S1DATA(currentState == S1_DATA) ,.crc32_out(crcResult));
 
   // State machine state variable
   always @ (posedge clk or posedge reset) begin
@@ -103,7 +104,7 @@ module enc8to10(input clk,
         counterK285 <= 'd0;
     end
     else begin
-        if ((currentState == S2_K285) && pushin) begin
+        if (currentState == S2_K285) begin
             counterK285 <= counterK285 + 1;
         end else if (currentState != S2_K285) begin
             counterK285 <= 'd0;
@@ -142,28 +143,33 @@ module enc8to10(input clk,
                       trueOutput = rearrange(outTemp);
                   end
                   pushout = 1'b1;
-                  crcData = crcResult;
-                  nextState = S2_K285;
+                  if (datain == K285) begin
+                      nextState = S2_K285;
+                      trueOutput = rearrange(kcodeCRC1);
+                      crcData = crcResult;
+                  end else begin
+                      crcData = 'd0;
+                  end
+                  //crcData = crcResult;
+                  //nextState = S2_K285;
+              end else begin
+                  crcData = 'd0;
               end
           end
           S2_K285: begin
-              if (pushin) begin
-                  trueOutput = rearrange(kcodeCRC1);
-                  pushout = 1'b1;
-              end
-              if (counterK285 == 'd1) begin
+              if (counterK285 == 'd0) begin
                   trueOutput = rearrange(firstCRC);
                   pushout = 1'b1;
-              end else if (counterK285 == 'd2) begin
+              end else if (counterK285 == 'd1) begin
                   trueOutput = rearrange(secondCRC);
                   pushout = 1'b1;
-              end else if (counterK285 == 'd3) begin
+              end else if (counterK285 == 'd2) begin
                   trueOutput = rearrange(thirdCRC);
                   pushout = 1'b1;
-              end else if (counterK285 == 'd4) begin
+              end else if (counterK285 == 'd3) begin
                   trueOutput = rearrange(fourthCRC);
                   pushout = 1'b1;
-              end else if (counterK285 == 'd5) begin
+              end else if (counterK285 == 'd4) begin
                   trueOutput = rearrange(kcodeCRC0);
                   pushout = 1'b1;
                   nextState = S0_K281;
