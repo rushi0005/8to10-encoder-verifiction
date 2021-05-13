@@ -40,39 +40,25 @@ class my_driver extends uvm_driver #(my_sequence_item);
 	endtask
 
 	virtual task strt(my_sequence_item req);
+	
 		this.vif.datain <= 9'b0;
 		this.vif.pushin <= 1'b0 ;
-		this.vif.datain_size <= req.datain_size ;
-		//$display("size is %0d",req.datain_size);
+		this.vif.startin <= 1'b0 ;
 		@(posedge (this.vif.clk));
 		this.vif.startin <= 1'b1 ;
-		this.vif.datain <= {1'b1,k28_1} ;
 		this.vif.pushin<= 1'b1 ;
-		@(posedge (this.vif.clk));
-		this.vif.startin <= 1'b0  ;
-		for(int i = 0 ; i <2; i++) begin
-			//@(posedge (this.vif.clk));
-			this.vif.datain <= {1'b1,k28_1} ;
-			this.vif.pushin<= 1'b1 ;
-			@(posedge (this.vif.clk));
-			
-		end
 		for(int i = 0 ; i <req.datain.size();i++) begin
+			this.vif.datain <= {req.cntr[i],req.datain[i]};
+			$display("datain[8] %0d datain[7:0] is %0d", req.cntr[i],req.datain[i]);
 			@(posedge (this.vif.clk));
-			this.vif.datain <= {req.cntr,req.datain[i]};
-			//@(this.vif.clk);
+			this.vif.startin <= 1'b0 ;
 		end
        		`uvm_info("DRIVER","Sending packet to scoreboard",UVM_NONE)
 		trans_out.write(req);	
-		@(posedge (this.vif.clk));			
-		this.vif.datain <= {1'b1,k28_5} ;
-		//@(this.vif.clk);
-		for(int i = 0 ; i <10 ;i++) begin
-			@(posedge(this.vif.clk));
+		for(int i = 0 ; i <11 ;i++) begin
 			this.vif.pushin <= 1'b0  ;
-			//@(this.vif.clk);
+			@(posedge(this.vif.clk));
 		end
-			
 	endtask
 
 	virtual task err();

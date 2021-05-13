@@ -31,11 +31,11 @@ class my_monitor extends uvm_monitor  ;
 		
 		forever begin			
 			@(posedge this.vif.clk);
-            		if(vif.pushout == 1) begin
+            		if(vif.startout == 1) begin
             		  res = new();
               		  res.pkt_rcvd_comp = 1;
            		end
-			if(vif.startout == 1) begin
+			if(vif.pushout == 1) begin
 			    //res.datain_size = this.vif.datain_size + 4'd10;
 			    `uvm_info("Monitor",$psprintf("time %0t",$time),UVM_NONE);
 			     res.dataout     = new[res.dataout.size() + 1](res.dataout);
@@ -43,7 +43,7 @@ class my_monitor extends uvm_monitor  ;
 			    `uvm_info("Monitor",$psprintf("dataout from monitor %0h",this.res.dataout[res.dataout.size - 1]),UVM_NONE);
                 	     prev_startout = 1'b1;
 			end
-            		if(vif.startout == 0 && prev_startout == 1) begin
+            		if(vif.pushout == 0 && prev_startout == 1) begin
                 		prev_startout = 0;
 		        	trans_out.write(res);	
 			       `uvm_info("Monitor",$psprintf("time %0t sending packet to scoreboaed",$time),UVM_NONE);

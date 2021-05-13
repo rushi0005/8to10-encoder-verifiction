@@ -22,7 +22,7 @@ module top();
 
 	intf int_f(clk,reset); //interface
 	enc8to10 enc(.clk(clk), .reset(reset), .pushin(int_f.pushin), .datain(int_f.datain), 
-				 .startin(int_f.startin), .pushout(int_f.pushout), .startout(startout), .dataout(int_f.dataout)); //DUT_interface
+				 .startin(int_f.startin), .pushout(int_f.pushout), .startout(int_f.startout), .dataout(int_f.dataout)); //DUT_interface
 
 	initial begin
 		clk= 0 ;

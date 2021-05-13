@@ -2,7 +2,7 @@ Command: vcs -sverilog -timescale=1ns/1ns +vpi +define+UVM_OBJECT_MUST_HAVE_CONS
 +incdir+/home/morris/uvm-1.2/src /home/morris/uvm-1.2/src/uvm.sv /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc \
 -CFLAGS -DVCS -l compile.log -sverilog testbench_top.sv
                          Chronologic VCS (TM)
-            Version R-2020.12 -- Thu May  6 15:26:05 2021
+            Version R-2020.12 -- Thu May 13 12:49:07 2021
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -316,7 +316,19 @@ Parsing included file 'my_env.sv'.
 Back to file 'testbench_top.sv'.
 Parsing included file 'my_test.sv'.
 Back to file 'testbench_top.sv'.
-Parsing included file 'design.sv'.
+Parsing included file 'design_header.vh'.
+Parsing included file 'crc32.v'.
+Back to file 'design_header.vh'.
+Parsing included file 'enc3to4.v'.
+Back to file 'design_header.vh'.
+Parsing included file 'enc5to6.v'.
+Back to file 'design_header.vh'.
+Parsing included file 'kcode8to10.v'.
+Back to file 'design_header.vh'.
+Parsing included file 'runningDisparity.v'.
+Back to file 'design_header.vh'.
+Parsing included file 'enc8to10.v'.
+Back to file 'design_header.vh'.
 Back to file 'testbench_top.sv'.
 Top Level Modules:
        top
@@ -337,24 +349,12 @@ rushi, "rushi::\my_scoreboard::ref_model_convert (this, pkt);"
   'uvm_analysis_imp#(rushi::my_sequence_item,rushi::my_scoreboard)::write', it
   may bring delays into the function.
 
-Notice: Ports coerced to inout, use -notice for details
-Starting vcs inline pass...
 
-6 modules and 0 UDP read.
-recompiling package vcs_paramclassrepository
-	However, due to incremental compilation, only 1 module needs to be compiled. 
-rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-ld -shared  -z notext -m elf_i386  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so \
-objs/amcQw_d.o 
-rm -f _cuarc0.so
-if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -m32 -m32 -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
--Wl,-rpath=/apps/synopsys/vcs/R-2020.12/linux/lib -L/apps/synopsys/vcs/R-2020.12/linux/lib \
--Wl,-rpath-link=./  uvm_dpi.o     _21485_archive_1.so _prev_archive_1.so _cuarc0.so \
-SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
--lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_tls.o \
--Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
-/apps/synopsys/vcs/R-2020.12/linux/lib/vcs_save_restore_new.o /apps/synopsys/vcs/R-2020.12/linux/lib/ctype-stubs_32.a \
--ldl  -lc -lm -lpthread -ldl 
-../simv up to date
-CPU time: 6.049 seconds to compile + .317 seconds to elab + .289 seconds to link
+Error-[IRIPS] Illegal range in part select
+my_scoreboard.sv, 327
+  The range of the part select is illegal:
+  encoded_data[10:19]
+
+2 warnings
+1 error
+CPU time: 2.117 seconds to compile

@@ -324,7 +324,7 @@ endfunction
             if(i==0) begin
 		//max = 9+10*neg_disparity ;
 		//min = 9*neg_disparity   ;
-              pkt.dataout[i] = encoded_data[19: 10];
+              pkt.dataout[i] = encoded_data[19:10];
             end 
 	    else begin
 	      if (neg_disparity == 1)

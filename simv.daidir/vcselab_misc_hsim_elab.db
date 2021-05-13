@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
-psLogFileName                      	NULL
-pDaiDir                            	/home/015310906@SJSUAD.SJSU.EDU/273_project/8to10-encoder-verifiction/simv.daidir
+psLogFileName                      	compile.log
+pDaiDir                            	/home/014513031/rus/8to10-encoder-verifiction/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 fHsimPCSharedLibSpecified          	0
