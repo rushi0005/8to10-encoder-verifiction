@@ -4,11 +4,12 @@ class my_scoreboard extends uvm_scoreboard ;
 	my_sequence_item res ;
 	uvm_analysis_imp #(my_sequence_item, my_scoreboard) trans_in ;
 	int diff ;
+	bit [10:0] data_o[] ;
         virtual intf vif ;
         my_sequence_item drv_q[$];
         my_sequence_item mon_q[$];
 
-
+	int temp ;
         bit[19:0] disparity_table [int];
 
 	function new (string name = "my_scoreboard",uvm_component parent);
@@ -318,35 +319,50 @@ endfunction
         bit neg_disparity = 1;
 	int ones,max,min;
         pkt.dataout = new[pkt.datain.size()];
+	data_o      = new[pkt.datain.size()];
 
         for(int i=0;i<pkt.datain.size();i++)begin
             encoded_data = disparity_table[pkt.datain[i]];
+		
             if(i==0) begin
 		//max = 9+10*neg_disparity ;
 		//min = 9*neg_disparity   ;
-              pkt.dataout[i] = encoded_data[19:10];
+              data_o[i] = encoded_data[19:10];
             end 
 	    else begin
 	      if (neg_disparity == 1)
-	      	pkt.dataout[i] = encoded_data[19:10];
+	      	data_o[i] = encoded_data[19:10];
 	      else if (neg_disparity == 0)
-		pkt.dataout[i] = encoded_data[9:0];
+		data_o[i] = encoded_data[9:0];
 	      else begin end
 	    end
-	    diff = $countones(pkt.dataout[i]);
+	    diff = $countones(data_o[i]);
             if(diff != 5) begin
-              `uvm_info("SCBD",$psprintf("Number of One's are not 5 = %b , %d",pkt.dataout[i],pkt.dataout[i]),UVM_NONE)
+              `uvm_info("SCBD",$psprintf("Number of One's are not 5 = %b ",data_o[i]),UVM_NONE)
                neg_disparity = ~neg_disparity;
               `uvm_info("SCBD",$psprintf("Disparity flipped, New disparity is %0b",neg_disparity),UVM_NONE)
             end
 	    else begin
-		`uvm_info("SCBD",$psprintf("Number of One's are 5 = %b , %b",pkt.dataout[i],pkt.datain[i]),UVM_NONE)
+		`uvm_info("SCBD",$psprintf("Number of One's are 5 = %b ",data_o[i]),UVM_NONE)
 		 neg_disparity = neg_disparity ;
 		`uvm_info("SCBD",$psprintf("Disparity remains same, New disparity is %0b",neg_disparity),UVM_NONE)
 		end 
+	
         end
+	expt_data(pkt);
 	endtask
+	
+	virtual task expt_data(my_sequence_item pkt);
+			for(int i = 0 ; i <pkt.datain.size(); i ++) begin
+				for(int j = 0 ; j<5 ; j++)begin
+					int temp = data_o[i][j];
+					pkt.dataout[i][j] = data_o[i][9-j];
+					pkt.dataout[i][9-j]= temp ;	
+				end
+			$display("%0b ref %0b",pkt.dataout[i], data_o[i]);
+			end
 
+	endtask
 
     virtual task compare_data();
       my_sequence_item drv_pkt,mon_pkt;
@@ -361,7 +377,7 @@ endfunction
 							`uvm_info("scoreboard",$sformatf("pkt passed got = %0b and expected = %b",mon_pkt.dataout[i],drv_pkt.dataout[i]),UVM_LOW)
 
 						else begin
-							`uvm_error("scoreboard",$sformatf("pkt failed got = %0h and expected = %0h",mon_pkt.dataout[i],drv_pkt.dataout[i]))
+							`uvm_error("scoreboard",$sformatf("pkt failed got = %0b and expected = %0b",mon_pkt.dataout[i],drv_pkt.dataout[i]))
 						end
 					   end
 					end
