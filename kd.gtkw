@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.94 (w)1999-2018 BSI
+[*] Sat May 15 05:07:01 2021
+[*]
+[dumpfile] "/home/015310906@SJSUAD.SJSU.EDU/273_project/8to10-encoder-verifiction/dump.vcd"
+[dumpfile_mtime] "Sat May 15 04:16:12 2021"
+[dumpfile_size] 15355
+[savefile] "/home/015310906@SJSUAD.SJSU.EDU/273_project/8to10-encoder-verifiction/kd.gtkw"
+[timestart] 0
+[size] 1416 589
+[pos] -984 -55
+*-5.079072 117 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.enc.
+[treeopen] top.enc.rd.
+[sst_width] 228
+[signals_width] 261
+[sst_expanded] 1
+[sst_vpaned_height] 137
+@28
+top.enc.clk
+top.enc.datain[8:0]
+top.enc.dataout[9:0]
+top.enc.RD
+@24
+top.enc.rd.countOnes.countOnes[2:0]
+@29
+top.enc.rearrange.data[9:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,5 +1,6 @@
 module enc3to4 (input [2:0] datain, 
             input RD,
+			input [4:0] lower,
             output [3:0] dataout);
 	
 	reg [3:0] fghj_d;
@@ -31,7 +32,19 @@ module enc3to4 (input [2:0] datain,
       		fghj_d = 4'b0110;
       	 end
       7: begin 
-      		fghj_d = (RD) ? 4'b0001 : 4'b1110;
+			if (RD == 0) begin
+				if ((lower == 'd17) || (lower == 'd18) || (lower == 'd20)) begin
+					fghj_d = 4'b0111;
+				end else begin
+					fghj_d = 4'b1110;
+				end
+			end else begin
+				if ((lower == 'd11) || (lower == 'd13) || (lower == 'd14)) begin
+					fghj_d = 4'b1000;
+				end else begin
+					fghj_d = 4'b0001;
+				end
+			end 
      	 end
     endcase
   end

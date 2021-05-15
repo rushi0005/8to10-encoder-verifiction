@@ -34,7 +34,7 @@ always @(*) begin
 		25: begin abcdei_d= 6'b100110; end 
 		26: begin abcdei_d= 6'b010110; end 
 		27: begin if(!RD)abcdei_d= 6'b110110; else abcdei_d= 6'b001001;   end 
-		28: begin if(!RD)abcdei_d=6'b001111; else abcdei_d=6'b110000;     end   // with control bit
+		28: begin abcdei_d= 6'b001110; end 
 		29: begin if(!RD)abcdei_d= 6'b101110; else abcdei_d= 6'b010001;   end 
 		30: begin if(!RD)abcdei_d= 6'b011110; else abcdei_d= 6'b100001;   end 
 		31: begin if(!RD)abcdei_d= 6'b101011; else abcdei_d= 6'b010100;   end 

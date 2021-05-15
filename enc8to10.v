@@ -25,7 +25,7 @@ module enc8to10(input clk,
          S2_K285 = 2'd2;
 
   wire Kbit;  // control bit
-  wire RD; // running disparity    0 for -1  and 1 for 1
+  wire RD6B, RD4B, RD; // running disparity    0 for -1  and 1 for 1
   wire [31:0] crcResult;
   reg  [31:0] crcData;
   
@@ -39,27 +39,32 @@ module enc8to10(input clk,
   
   // the running disparity will always be active when trueOutput is available (pushout is high).
   // the RD FSM will reset at the start of sequence (startin is high)
-  runningDisparity rd (.clk(clk), .reset(reset), .dataout(trueOutput), .startin(startin), .RDout(RD), .pushout(pushout));
+  runningDisparity #(.WIDTH(6)) rd6b (.clk(clk), .reset(reset), .dataout(trueOutput[5:0]), .startin(startin), .RDout(RD6B), .pushout(pushout));
+
+  runningDisparity #(.WIDTH(4)) rd4b (.clk(clk), .reset(reset), .dataout(trueOutput[9:6]), .startin(startin), .RDout(RD4B), .pushout(pushout));
+
+  runningDisparity #(.WIDTH(10)) rd10b (.clk(clk), .reset(reset), .dataout(trueOutput), .startin(startin), .RDout(RD), .pushout(pushout));
+
 
   //8/10b Encoding the data byte
-  enc5to6 ec0 (.datain(datain[4:0]), .RD(RD), .dataout(outTemp[9:4]));
-  enc3to4 ec1 (.datain(datain[7:5]), .RD(~RD), .dataout(outTemp[3:0]));
+  enc5to6 ec0 (.datain(datain[4:0]), .RD(RD6B), .dataout(outTemp[9:4]));
+  enc3to4 ec1 (.datain(datain[7:5]), .RD(RD4B), .dataout(outTemp[3:0]), .lower(datain[4:0]));
 
   // 8/10b Encoding the first CRC byte 
-  enc5to6 ec2 (.datain(crcData[4:0]), .RD(RD), .dataout(firstCRC[9:4]));
-  enc3to4 ec3 (.datain(crcData[7:5]), .RD(~RD), .dataout(firstCRC[3:0]));
+  enc5to6 ec2 (.datain(crcData[4:0]), .RD(RD6B), .dataout(firstCRC[9:4]));
+  enc3to4 ec3 (.datain(crcData[7:5]), .RD(RD4B), .dataout(firstCRC[3:0]), .lower(crcData[4:0]));
 
   // 8/10b Encoding the second CRC byte 
-  enc5to6 ec4 (.datain(crcData[12:8]), .RD(RD), .dataout(secondCRC[9:4]));
-  enc3to4 ec5 (.datain(crcData[15:13]), .RD(~RD), .dataout(secondCRC[3:0]));
+  enc5to6 ec4 (.datain(crcData[12:8]), .RD(RD6B), .dataout(secondCRC[9:4]));
+  enc3to4 ec5 (.datain(crcData[15:13]), .RD(RD4B), .dataout(secondCRC[3:0]), .lower(crcData[12:8]));
 
   // 8/10b Encoding the third CRC byte 
-  enc5to6 ec6 (.datain(crcData[20:16]), .RD(RD), .dataout(thirdCRC[9:4]));
-  enc3to4 ec7 (.datain(crcData[23:21]), .RD(~RD), .dataout(thirdCRC[3:0]));
+  enc5to6 ec6 (.datain(crcData[20:16]), .RD(RD6B), .dataout(thirdCRC[9:4]));
+  enc3to4 ec7 (.datain(crcData[23:21]), .RD(RD4B), .dataout(thirdCRC[3:0]), .lower(crcData[20:16]));
 
   // 8/10b Encoding the fourth CRC byte 
-  enc5to6 ec8 (.datain(crcData[28:24]), .RD(RD), .dataout(fourthCRC[9:4]));
-  enc3to4 ec9 (.datain(crcData[31:29]), .RD(~RD), .dataout(fourthCRC[3:0]));
+  enc5to6 ec8 (.datain(crcData[28:24]), .RD(RD6B), .dataout(fourthCRC[9:4]));
+  enc3to4 ec9 (.datain(crcData[31:29]), .RD(RD4B), .dataout(fourthCRC[3:0]), .lower(crcData[28:24]));
 
   // 8/10b Encoding the kcode 
   kcode8to10 kc0 (.datain(datain[7:0]), .RD(RD), .dataout(kcode));
