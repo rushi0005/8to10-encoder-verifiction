@@ -37,8 +37,13 @@ module runningDisparity #(parameter WIDTH=10) (input clk,
 			S1: begin
 				//RDout = 1'b1;
 				if (startin) begin
-					nextState = S0;
-					RDout = 1'b0;
+					if ((countOnes(dataout) == CWIDTH && pushout)) begin
+						nextState = S0;
+						RDout = 1'b0;
+					end else if (pushout) begin
+						nextState = S1;
+						RDout = 1'b1;
+					end
 				end else begin
 					if (countOnes(dataout) == CWIDTH && pushout) begin
 						nextState = S1;

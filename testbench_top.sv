@@ -43,7 +43,7 @@ module top();
 		end
 
 	initial begin
-		#500 $finish ;
+		#5000 $finish ;
 	end
 
 	initial begin

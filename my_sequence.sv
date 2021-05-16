@@ -7,7 +7,7 @@ class my_sequence extends uvm_sequence #(my_sequence_item) ;
 	endfunction
 
 	virtual task body() ;
-		repeat(1) begin
+		repeat(3) begin
 			req = my_sequence_item :: type_id :: create("req");
 			wait_for_grant();
 			req.randomize();
