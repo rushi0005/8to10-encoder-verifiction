@@ -2,8 +2,6 @@
 
 class my_driver extends uvm_driver #(my_sequence_item);
 	`uvm_component_utils(my_driver)
-	parameter logic [7:0] k28_1 = 8'h3C;
-	parameter logic [7:0] k28_5 = 8'hBC;
 	
 	virtual intf vif ;
 
@@ -21,8 +19,6 @@ class my_driver extends uvm_driver #(my_sequence_item);
 		end
 	endfunction
 
-	
-
 	virtual task run_phase(uvm_phase phase);
 		super.run_phase(phase);
 		
@@ -32,47 +28,61 @@ class my_driver extends uvm_driver #(my_sequence_item);
             `uvm_info("DRIVER","Received packet to driver",UVM_NONE)
             req.print();
 			case (req.st)
-				0 : strt(req);
-				1 : err();
+				0 : drv_k(req); //drive k signal in between data
+				1 : drv_d(req); //drive only data signal
 			endcase
 			seq_item_port.item_done();
 		end
 	endtask
-
-	virtual task strt(my_sequence_item req);
 	
+	virtual task drv_k(my_sequence_item req);
+			
+		foreach(req.datain[i]) begin	
+			req.cntr = new[i + 1](req.cntr);
+			if (req.datain[i] inside{ 8'd28 ,8'd60 , 8'd92 , 8'd124 , 8'd156, 8'd220 , 8'd247 ,8'd251 ,8'd253,8'd254, 8'd188 })
+				req.cntr[i] = 1;
+			else
+				req.cntr[i] = 0 ;
+			end
+		data(req);
+	endtask
+
+	virtual task drv_d(my_sequence_item req);
+			
+		foreach(req.datain[i]) begin	
+			req.cntr = new[i + 1](req.cntr);
+			if (req.datain[i] inside{ 8'd60 , 8'd188 })
+				req.cntr[i] = 1;
+			else
+				req.cntr[i] = 0 ;
+			end
+		data(req);
+	endtask
+
+	virtual task data(my_sequence_item req);
 		this.vif.datain <= 9'b0;
 		this.vif.pushin <= 1'b0 ;
 		this.vif.startin <= 1'b0 ;
 		@(posedge (this.vif.clk));
 		this.vif.startin <= 1'b1 ;
 		this.vif.pushin<= 1'b1 ;
+
 		for(int i = 0 ; i <req.datain.size();i++) begin
 			this.vif.datain <= {req.cntr[i],req.datain[i]};
 			$display("datain[8] %0d datain[7:0] is %0d", req.cntr[i],req.datain[i]);
 			@(posedge (this.vif.clk));
 			this.vif.startin <= 1'b0 ;
 		end
+
        		`uvm_info("DRIVER","Sending packet to scoreboard",UVM_NONE)
 		trans_out.write(req);	
-		for(int i = 0 ; i <11 ;i++) begin
+		for(int i = 0 ; i <9 ;i++) begin
 			this.vif.pushin <= 1'b0  ;
 			@(posedge(this.vif.clk));
 		end
-	endtask
-
-	virtual task err();
-	
-	endtask
-			
+	endtask		
 		
-	/*virtual task drive (my_sequence_item req);
-		@(this.vif.driver_cb);
-			this.vif.driver_cb.datain <= req.datain ;
-		this.vif.driver_cb.pushin <= 1'b1 ;
-		this.vif.driver_cb.startin <= 1'b1 ;
-			
-	endtask*/
+	
 endclass
 			
 

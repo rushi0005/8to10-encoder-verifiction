@@ -1,7 +1,7 @@
-Command: /home/014513031/rus/8to10-encoder-verifiction/./simv -l run.log
+Command: /home/014513031/8to10-encoder-verifiction/./simv -l run.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12; Runtime version R-2020.12;  May 13 16:27 2021
+Compiler version R-2020.12; Runtime version R-2020.12;  May 16 12:13 2021
 UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2
@@ -50,143 +50,181 @@ uvm_test_top               my_test                 -     @340
 --------------------------------------------------------------
 
 UVM_INFO my_moniter.sv(30) @ 0: uvm_test_top.env.agn.mon [Monitor] time 0
-UVM_INFO my_driver.sv(32) @ 0: uvm_test_top.env.agn.drv [DRIVER] Received packet to driver
+UVM_INFO my_driver.sv(28) @ 0: uvm_test_top.env.agn.drv [DRIVER] Received packet to driver
 ----------------------------------------
 Name       Type              Size  Value
 ----------------------------------------
 req        my_sequence_item  -     @622 
-  st       integral          1     'h0  
+  st       integral          1     'h1  
   dataout  da(integral)      0     -    
   datain   da(integral)      10    -    
     [0]    integral          8     'h3c 
     [1]    integral          8     'h3c 
     [2]    integral          8     'h3c 
     [3]    integral          8     'h3c 
-    [4]    integral          8     'he0 
-    [5]    integral          8     'h99 
-    [6]    integral          8     'hfe 
-    [7]    integral          8     'h7d 
+    [4]    integral          8     'he4 
+    [5]    integral          8     'h9b 
+    [6]    integral          8     'ha6 
+    [7]    integral          8     'h7f 
     [8]    integral          8     'h37 
     [9]    integral          8     'hbc 
-  pushout  integral          1     'h0  
 ----------------------------------------
 datain[8] 1 datain[7:0] is 60
 UVM_INFO my_moniter.sv(40) @ 15: uvm_test_top.env.agn.mon [Monitor] time 15
 UVM_INFO my_moniter.sv(43) @ 15: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
-UVM_INFO my_scoreboard.sv(385) @ 15: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 15: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
 datain[8] 1 datain[7:0] is 60
 UVM_INFO my_moniter.sv(40) @ 25: uvm_test_top.env.agn.mon [Monitor] time 25
-UVM_INFO my_moniter.sv(43) @ 25: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
-UVM_INFO my_scoreboard.sv(385) @ 25: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_moniter.sv(43) @ 25: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 25: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
 datain[8] 1 datain[7:0] is 60
 UVM_INFO my_moniter.sv(40) @ 35: uvm_test_top.env.agn.mon [Monitor] time 35
-UVM_INFO my_moniter.sv(43) @ 35: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
-UVM_INFO my_scoreboard.sv(385) @ 35: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_moniter.sv(43) @ 35: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 35: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
 datain[8] 1 datain[7:0] is 60
 UVM_INFO my_moniter.sv(40) @ 45: uvm_test_top.env.agn.mon [Monitor] time 45
-UVM_INFO my_moniter.sv(43) @ 45: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
-UVM_INFO my_scoreboard.sv(385) @ 45: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-datain[8] 0 datain[7:0] is 224
+UVM_INFO my_moniter.sv(43) @ 45: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 45: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 228
 UVM_INFO my_moniter.sv(40) @ 55: uvm_test_top.env.agn.mon [Monitor] time 55
-UVM_INFO my_moniter.sv(43) @ 55: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 1c6
-UVM_INFO my_scoreboard.sv(385) @ 55: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-datain[8] 0 datain[7:0] is 153
+UVM_INFO my_moniter.sv(43) @ 55: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 22b
+UVM_INFO my_scoreboard.sv(143) @ 55: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 155
 UVM_INFO my_moniter.sv(40) @ 65: uvm_test_top.env.agn.mon [Monitor] time 65
-UVM_INFO my_moniter.sv(43) @ 65: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 2d9
-UVM_INFO my_scoreboard.sv(385) @ 65: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-datain[8] 1 datain[7:0] is 254
+UVM_INFO my_moniter.sv(43) @ 65: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 11b
+UVM_INFO my_scoreboard.sv(143) @ 65: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 166
 UVM_INFO my_moniter.sv(40) @ 75: uvm_test_top.env.agn.mon [Monitor] time 75
-UVM_INFO my_moniter.sv(43) @ 75: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 0
-UVM_INFO my_scoreboard.sv(385) @ 75: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-datain[8] 0 datain[7:0] is 125
+UVM_INFO my_moniter.sv(43) @ 75: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 166
+UVM_INFO my_scoreboard.sv(143) @ 75: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 127
 UVM_INFO my_moniter.sv(40) @ 85: uvm_test_top.env.agn.mon [Monitor] time 85
-UVM_INFO my_moniter.sv(43) @ 85: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 31d
-UVM_INFO my_scoreboard.sv(385) @ 85: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_moniter.sv(43) @ 85: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 335
+UVM_INFO my_scoreboard.sv(143) @ 85: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
 datain[8] 0 datain[7:0] is 55
 UVM_INFO my_moniter.sv(40) @ 95: uvm_test_top.env.agn.mon [Monitor] time 95
 UVM_INFO my_moniter.sv(43) @ 95: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 268
-UVM_INFO my_scoreboard.sv(385) @ 95: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 95: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
 datain[8] 1 datain[7:0] is 188
 UVM_INFO my_moniter.sv(40) @ 105: uvm_test_top.env.agn.mon [Monitor] time 105
 UVM_INFO my_moniter.sv(43) @ 105: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 57
-UVM_INFO my_scoreboard.sv(385) @ 105: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO my_driver.sv(56) @ 105: uvm_test_top.env.agn.drv [DRIVER] Sending packet to scoreboard
-UVM_INFO my_scoreboard.sv(35) @ 105: uvm_test_top.env.scb [SCBD] DRV Packet Received
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
-UVM_INFO my_scoreboard.sv(346) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01001110001 
-UVM_INFO my_scoreboard.sv(348) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01001101101 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
-UVM_INFO my_scoreboard.sv(346) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01000010111 
-UVM_INFO my_scoreboard.sv(348) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 0
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00100011100 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01110101001 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
-UVM_INFO my_scoreboard.sv(341) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000101 
-UVM_INFO my_scoreboard.sv(343) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+UVM_INFO my_scoreboard.sv(143) @ 105: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_driver.sv(77) @ 105: uvm_test_top.env.agn.drv [DRIVER] Sending packet to scoreboard
+UVM_INFO my_scoreboard.sv(38) @ 105: uvm_test_top.env.scb [SCBD] DRV Packet Received
+10111100
+11110111
+i is 0 contr; 1 and data 60
+i is           0 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 1 contr; 1 and data 60
+i is           1 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 2 contr; 1 and data 60
+i is           2 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 3 contr; 1 and data 60
+i is           3 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 4 contr; 0 and data 228
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01101010001 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 5 contr; 0 and data 155
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01101100010 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 6 contr; 0 and data 166
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 00110011010 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 7 contr; 0 and data 127
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01010110011 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 8 contr; 0 and data 55
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00001011001 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 9 contr; 1 and data 247
+i is           9 encoded data 11101010000001010111
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01110101000 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 10 contr; 0 and data 67
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01100010101 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 11 contr; 0 and data 17
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01000111011 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 12 contr; 0 and data 216
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011000110 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 13 contr; 0 and data 188
+UVM_INFO my_scoreboard.sv(104) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 00011101010 
+UVM_INFO my_scoreboard.sv(106) @ 105: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 14 contr; 1 and data 188
+i is          14 encoded data 111110101100000101
+UVM_INFO my_scoreboard.sv(99) @ 105: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111010 
+UVM_INFO my_scoreboard.sv(101) @ 105: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
 1001111100 ref 11111001
 110000011 ref 1100000110
 1001111100 ref 11111001
 110000011 ref 1100000110
-1000111001 ref 1001110001
-1011011001 ref 1001101101
-1110100001 ref 1000010111
-11100010 ref 100011100
-1001010111 ref 1110101001
-1010000011 ref 1100000101
+1000101011 ref 1101010001
+100011011 ref 1101100010
+101100110 ref 110011010
+1100110101 ref 1010110011
+1001101000 ref 1011001
+1010111 ref 1110101000
+1010100011 ref 1100010101
+1101110001 ref 1000111011
+110001100 ref 11000110
+101011100 ref 11101010
+101111100 ref 11111010
 ----------------------------------------
 Name       Type              Size  Value
 ----------------------------------------
 req        my_sequence_item  -     @622 
-  st       integral          1     'h0  
-  dataout  da(integral)      10    -    
+  st       integral          1     'h1  
+  dataout  da(integral)      15    -    
     [0]    integral          10    'h27c
     [1]    integral          10    'h183
     [2]    integral          10    'h27c
     [3]    integral          10    'h183
-    [4]    integral          10    'h239
-    [5]    integral          10    'h2d9
-    [6]    integral          10    'h3a1
-    [7]    integral          10    'he2 
-    [8]    integral          10    'h257
-    [9]    integral          10    'h283
-  datain   da(integral)      10    -    
+    [4]    integral          10    'h22b
+    ...    ...               ...   ...  
+    [10]   integral          10    'h2a3
+    [11]   integral          10    'h371
+    [12]   integral          10    'h18c
+    [13]   integral          10    'h15c
+    [14]   integral          10    'h17c
+  datain   da(integral)      15    -    
     [0]    integral          8     'h3c 
     [1]    integral          8     'h3c 
     [2]    integral          8     'h3c 
     [3]    integral          8     'h3c 
-    [4]    integral          8     'he0 
-    [5]    integral          8     'h99 
-    [6]    integral          8     'hfe 
-    [7]    integral          8     'h7d 
-    [8]    integral          8     'h37 
-    [9]    integral          8     'hbc 
-  pushout  integral          1     'h0  
+    [4]    integral          8     'he4 
+    ...    ...               ...   ...  
+    [10]   integral          8     'h43 
+    [11]   integral          8     'h11 
+    [12]   integral          8     'hd8 
+    [13]   integral          8     'hbc 
+    [14]   integral          8     'hbc 
 ----------------------------------------
 UVM_INFO my_moniter.sv(40) @ 115: uvm_test_top.env.agn.mon [Monitor] time 115
-UVM_INFO my_moniter.sv(43) @ 115: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 12d
-UVM_INFO my_scoreboard.sv(385) @ 115: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(43) @ 115: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 2a3
+UVM_INFO my_scoreboard.sv(143) @ 115: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
 UVM_INFO my_moniter.sv(40) @ 125: uvm_test_top.env.agn.mon [Monitor] time 125
-UVM_INFO my_moniter.sv(43) @ 125: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 32d
-UVM_INFO my_scoreboard.sv(385) @ 125: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(43) @ 125: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 371
+UVM_INFO my_scoreboard.sv(143) @ 125: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
 UVM_INFO my_moniter.sv(40) @ 135: uvm_test_top.env.agn.mon [Monitor] time 135
-UVM_INFO my_moniter.sv(43) @ 135: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 198
-UVM_INFO my_scoreboard.sv(385) @ 135: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(43) @ 135: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 18c
+UVM_INFO my_scoreboard.sv(143) @ 135: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
 UVM_INFO my_moniter.sv(40) @ 145: uvm_test_top.env.agn.mon [Monitor] time 145
-UVM_INFO my_moniter.sv(43) @ 145: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 153
-UVM_INFO my_scoreboard.sv(385) @ 145: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(43) @ 145: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 15c
+UVM_INFO my_scoreboard.sv(143) @ 145: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
 UVM_INFO my_moniter.sv(40) @ 155: uvm_test_top.env.agn.mon [Monitor] time 155
 UVM_INFO my_moniter.sv(43) @ 155: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 17c
-UVM_INFO my_scoreboard.sv(385) @ 155: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
-UVM_INFO my_scoreboard.sv(31) @ 165: uvm_test_top.env.scb [SCBD] Mon Packet Received
+UVM_INFO my_scoreboard.sv(143) @ 155: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_scoreboard.sv(34) @ 165: uvm_test_top.env.scb [SCBD] Mon Packet Received
 --------------------------------------------
 Name           Type              Size  Value
 --------------------------------------------
@@ -194,58 +232,501 @@ sequence_item  my_sequence_item  -     @653
   st           integral          1     'h0  
   dataout      da(integral)      15    -    
     [0]        integral          10    'h27c
-    [1]        integral          10    'h27c
-    [2]        integral          10    'h183
-    [3]        integral          10    'h27c
-    [4]        integral          10    'h1c6
+    [1]        integral          10    'h183
+    [2]        integral          10    'h27c
+    [3]        integral          10    'h183
+    [4]        integral          10    'h22b
     ...        ...               ...   ...  
-    [10]       integral          10    'h12d
-    [11]       integral          10    'h32d
-    [12]       integral          10    'h198
-    [13]       integral          10    'h153
+    [10]       integral          10    'h2a3
+    [11]       integral          10    'h371
+    [12]       integral          10    'h18c
+    [13]       integral          10    'h15c
     [14]       integral          10    'h17c
   datain       da(integral)      0     -    
-  pushout      integral          1     'h0  
 --------------------------------------------
 UVM_INFO my_moniter.sv(49) @ 165: uvm_test_top.env.agn.mon [Monitor] time 165 sending packet to scoreboaed
 time 165 sending packet to scoreboaed
-UVM_INFO my_scoreboard.sv(377) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 1001111100 and expected = 110000011
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 110000011 and expected = 1001111100
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 1001111100 and expected = 110000011
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 111000110 and expected = 1000111001
-UVM_INFO my_scoreboard.sv(377) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1011011001 and expected = 1011011001
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 0 and expected = 1110100001
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 1100011101 and expected = 11100010
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 1001101000 and expected = 1001010111
-UVM_ERROR my_scoreboard.sv(380) @ 165: uvm_test_top.env.scb [scoreboard] pkt failed got = 1010111 and expected = 1010000011
-UVM_INFO my_scoreboard.sv(385) @ 175: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO my_scoreboard.sv(385) @ 185: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO my_scoreboard.sv(385) @ 195: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO my_scoreboard.sv(385) @ 205: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO my_scoreboard.sv(385) @ 215: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
-UVM_INFO /home/morris/uvm-1.2/src/base/uvm_objection.svh(1270) @ 215: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO /home/morris/uvm-1.2/src/base/uvm_report_server.svh(847) @ 215: reporter [UVM/REPORT/SERVER] 
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1000101011 and expected = 1000101011
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 100011011 and expected = 0100011011
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 101100110 and expected = 0101100110
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1100110101 and expected = 1100110101
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001101000 and expected = 1001101000
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010111 and expected = 0001010111
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010100011 and expected = 1010100011
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 1101110001 and expected = 1101110001
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 110001100 and expected = 0110001100
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 101011100 and expected = 0101011100
+UVM_INFO my_scoreboard.sv(135) @ 165: uvm_test_top.env.scb [scoreboard] pkt passed got = 101111100 and expected = 0101111100
+UVM_INFO my_scoreboard.sv(143) @ 175: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 185: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 195: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_driver.sv(28) @ 195: uvm_test_top.env.agn.drv [DRIVER] Received packet to driver
+----------------------------------------
+Name       Type              Size  Value
+----------------------------------------
+req        my_sequence_item  -     @851 
+  st       integral          1     'h1  
+  dataout  da(integral)      0     -    
+  datain   da(integral)      10    -    
+    [0]    integral          8     'h3c 
+    [1]    integral          8     'h3c 
+    [2]    integral          8     'h3c 
+    [3]    integral          8     'h3c 
+    [4]    integral          8     'hac 
+    [5]    integral          8     'h88 
+    [6]    integral          8     'hbb 
+    [7]    integral          8     'h4d 
+    [8]    integral          8     'hf1 
+    [9]    integral          8     'hbc 
+----------------------------------------
+UVM_INFO my_scoreboard.sv(143) @ 205: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 215: uvm_test_top.env.agn.mon [Monitor] time 215
+UVM_INFO my_moniter.sv(43) @ 215: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 215: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 225: uvm_test_top.env.agn.mon [Monitor] time 225
+UVM_INFO my_moniter.sv(43) @ 225: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 225: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 235: uvm_test_top.env.agn.mon [Monitor] time 235
+UVM_INFO my_moniter.sv(43) @ 235: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 235: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 245: uvm_test_top.env.agn.mon [Monitor] time 245
+UVM_INFO my_moniter.sv(43) @ 245: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 245: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 172
+UVM_INFO my_moniter.sv(40) @ 255: uvm_test_top.env.agn.mon [Monitor] time 255
+UVM_INFO my_moniter.sv(43) @ 255: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 16c
+UVM_INFO my_scoreboard.sv(143) @ 255: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 136
+UVM_INFO my_moniter.sv(40) @ 265: uvm_test_top.env.agn.mon [Monitor] time 265
+UVM_INFO my_moniter.sv(43) @ 265: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 127
+UVM_INFO my_scoreboard.sv(143) @ 265: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 187
+UVM_INFO my_moniter.sv(40) @ 275: uvm_test_top.env.agn.mon [Monitor] time 275
+UVM_INFO my_moniter.sv(43) @ 275: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 15b
+UVM_INFO my_scoreboard.sv(143) @ 275: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 77
+UVM_INFO my_moniter.sv(40) @ 285: uvm_test_top.env.agn.mon [Monitor] time 285
+UVM_INFO my_moniter.sv(43) @ 285: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 28d
+UVM_INFO my_scoreboard.sv(143) @ 285: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 241
+UVM_INFO my_moniter.sv(40) @ 295: uvm_test_top.env.agn.mon [Monitor] time 295
+UVM_INFO my_moniter.sv(43) @ 295: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 231
+UVM_INFO my_scoreboard.sv(143) @ 295: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 188
+UVM_INFO my_moniter.sv(40) @ 305: uvm_test_top.env.agn.mon [Monitor] time 305
+UVM_INFO my_moniter.sv(43) @ 305: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 57
+UVM_INFO my_scoreboard.sv(143) @ 305: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_driver.sv(77) @ 305: uvm_test_top.env.agn.drv [DRIVER] Sending packet to scoreboard
+UVM_INFO my_scoreboard.sv(38) @ 305: uvm_test_top.env.scb [SCBD] DRV Packet Received
+10111100
+11110111
+i is 0 contr; 1 and data 60
+i is           0 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 1 contr; 1 and data 60
+i is           1 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 2 contr; 1 and data 60
+i is           2 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 3 contr; 1 and data 60
+i is           3 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 4 contr; 0 and data 172
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 00011011010 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 5 contr; 0 and data 136
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01110010010 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 6 contr; 0 and data 187
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01101101010 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 7 contr; 0 and data 77
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01011000101 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 0
+i is 8 contr; 0 and data 241
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01000110001 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 9 contr; 1 and data 247
+i is           9 encoded data 11101010000001010111
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01110101000 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 10 contr; 0 and data 109
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01011001100 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 11 contr; 0 and data 249
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01001101110 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 12 contr; 0 and data 126
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01000011100 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 13 contr; 0 and data 29
+UVM_INFO my_scoreboard.sv(104) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01011100100 
+UVM_INFO my_scoreboard.sv(106) @ 305: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 14 contr; 1 and data 188
+i is          14 encoded data 111110101100000101
+UVM_INFO my_scoreboard.sv(99) @ 305: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111010 
+UVM_INFO my_scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+1001111100 ref 11111001
+110000011 ref 1100000110
+1001111100 ref 11111001
+110000011 ref 1100000110
+101101100 ref 11011010
+100100111 ref 1110010010
+101011011 ref 1101101010
+1010001101 ref 1011000101
+1000110001 ref 1000110001
+1010111 ref 1110101000
+11001101 ref 1011001100
+111011001 ref 1001101110
+11100001 ref 1000011100
+10011101 ref 1011100100
+101111100 ref 11111010
+----------------------------------------
+Name       Type              Size  Value
+----------------------------------------
+req        my_sequence_item  -     @851 
+  st       integral          1     'h1  
+  dataout  da(integral)      15    -    
+    [0]    integral          10    'h27c
+    [1]    integral          10    'h183
+    [2]    integral          10    'h27c
+    [3]    integral          10    'h183
+    [4]    integral          10    'h16c
+    ...    ...               ...   ...  
+    [10]   integral          10    'hcd 
+    [11]   integral          10    'h1d9
+    [12]   integral          10    'he1 
+    [13]   integral          10    'h9d 
+    [14]   integral          10    'h17c
+  datain   da(integral)      15    -    
+    [0]    integral          8     'h3c 
+    [1]    integral          8     'h3c 
+    [2]    integral          8     'h3c 
+    [3]    integral          8     'h3c 
+    [4]    integral          8     'hac 
+    ...    ...               ...   ...  
+    [10]   integral          8     'h6d 
+    [11]   integral          8     'hf9 
+    [12]   integral          8     'h7e 
+    [13]   integral          8     'h1d 
+    [14]   integral          8     'hbc 
+----------------------------------------
+UVM_INFO my_moniter.sv(40) @ 315: uvm_test_top.env.agn.mon [Monitor] time 315
+UVM_INFO my_moniter.sv(43) @ 315: uvm_test_top.env.agn.mon [Monitor] dataout from monitor cd
+UVM_INFO my_scoreboard.sv(143) @ 315: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 325: uvm_test_top.env.agn.mon [Monitor] time 325
+UVM_INFO my_moniter.sv(43) @ 325: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 1d9
+UVM_INFO my_scoreboard.sv(143) @ 325: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 335: uvm_test_top.env.agn.mon [Monitor] time 335
+UVM_INFO my_moniter.sv(43) @ 335: uvm_test_top.env.agn.mon [Monitor] dataout from monitor e1
+UVM_INFO my_scoreboard.sv(143) @ 335: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 345: uvm_test_top.env.agn.mon [Monitor] time 345
+UVM_INFO my_moniter.sv(43) @ 345: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 9d
+UVM_INFO my_scoreboard.sv(143) @ 345: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 355: uvm_test_top.env.agn.mon [Monitor] time 355
+UVM_INFO my_moniter.sv(43) @ 355: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 17c
+UVM_INFO my_scoreboard.sv(143) @ 355: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_scoreboard.sv(34) @ 365: uvm_test_top.env.scb [SCBD] Mon Packet Received
+--------------------------------------------
+Name           Type              Size  Value
+--------------------------------------------
+sequence_item  my_sequence_item  -     @859 
+  st           integral          1     'h0  
+  dataout      da(integral)      15    -    
+    [0]        integral          10    'h27c
+    [1]        integral          10    'h183
+    [2]        integral          10    'h27c
+    [3]        integral          10    'h183
+    [4]        integral          10    'h16c
+    ...        ...               ...   ...  
+    [10]       integral          10    'hcd 
+    [11]       integral          10    'h1d9
+    [12]       integral          10    'he1 
+    [13]       integral          10    'h9d 
+    [14]       integral          10    'h17c
+  datain       da(integral)      0     -    
+--------------------------------------------
+UVM_INFO my_moniter.sv(49) @ 365: uvm_test_top.env.agn.mon [Monitor] time 365 sending packet to scoreboaed
+time 365 sending packet to scoreboaed
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 101101100 and expected = 0101101100
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 100100111 and expected = 0100100111
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 101011011 and expected = 0101011011
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010001101 and expected = 1010001101
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 1000110001 and expected = 1000110001
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010111 and expected = 0001010111
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 11001101 and expected = 0011001101
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 111011001 and expected = 0111011001
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 11100001 and expected = 0011100001
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 10011101 and expected = 0010011101
+UVM_INFO my_scoreboard.sv(135) @ 365: uvm_test_top.env.scb [scoreboard] pkt passed got = 101111100 and expected = 0101111100
+UVM_INFO my_scoreboard.sv(143) @ 375: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 385: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 395: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_driver.sv(28) @ 395: uvm_test_top.env.agn.drv [DRIVER] Received packet to driver
+----------------------------------------
+Name       Type              Size  Value
+----------------------------------------
+req        my_sequence_item  -     @1057
+  st       integral          1     'h1  
+  dataout  da(integral)      0     -    
+  datain   da(integral)      11    -    
+    [0]    integral          8     'h3c 
+    [1]    integral          8     'h3c 
+    [2]    integral          8     'h3c 
+    [3]    integral          8     'h3c 
+    [4]    integral          8     'h4a 
+    ...    ...               ...   ...  
+    [6]    integral          8     'h1e 
+    [7]    integral          8     'hd1 
+    [8]    integral          8     'hfc 
+    [9]    integral          8     'hff 
+    [10]   integral          8     'hbc 
+----------------------------------------
+UVM_INFO my_scoreboard.sv(143) @ 405: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 415: uvm_test_top.env.agn.mon [Monitor] time 415
+UVM_INFO my_moniter.sv(43) @ 415: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 415: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 425: uvm_test_top.env.agn.mon [Monitor] time 425
+UVM_INFO my_moniter.sv(43) @ 425: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 425: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 435: uvm_test_top.env.agn.mon [Monitor] time 435
+UVM_INFO my_moniter.sv(43) @ 435: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 435: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 445: uvm_test_top.env.agn.mon [Monitor] time 445
+UVM_INFO my_moniter.sv(43) @ 445: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 183
+UVM_INFO my_scoreboard.sv(143) @ 445: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 74
+UVM_INFO my_moniter.sv(40) @ 455: uvm_test_top.env.agn.mon [Monitor] time 455
+UVM_INFO my_moniter.sv(43) @ 455: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 2aa
+UVM_INFO my_scoreboard.sv(143) @ 455: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 60
+UVM_INFO my_moniter.sv(40) @ 465: uvm_test_top.env.agn.mon [Monitor] time 465
+UVM_INFO my_moniter.sv(43) @ 465: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 27c
+UVM_INFO my_scoreboard.sv(143) @ 465: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 30
+UVM_INFO my_moniter.sv(40) @ 475: uvm_test_top.env.agn.mon [Monitor] time 475
+UVM_INFO my_moniter.sv(43) @ 475: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 361
+UVM_INFO my_scoreboard.sv(143) @ 475: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 209
+UVM_INFO my_moniter.sv(40) @ 485: uvm_test_top.env.agn.mon [Monitor] time 485
+UVM_INFO my_moniter.sv(43) @ 485: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 1b1
+UVM_INFO my_scoreboard.sv(143) @ 485: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 252
+UVM_INFO my_moniter.sv(40) @ 495: uvm_test_top.env.agn.mon [Monitor] time 495
+UVM_INFO my_moniter.sv(43) @ 495: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 21c
+UVM_INFO my_scoreboard.sv(143) @ 495: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 0 datain[7:0] is 255
+UVM_INFO my_moniter.sv(40) @ 505: uvm_test_top.env.agn.mon [Monitor] time 505
+UVM_INFO my_moniter.sv(43) @ 505: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 235
+UVM_INFO my_scoreboard.sv(143) @ 505: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+datain[8] 1 datain[7:0] is 188
+UVM_INFO my_moniter.sv(40) @ 515: uvm_test_top.env.agn.mon [Monitor] time 515
+UVM_INFO my_moniter.sv(43) @ 515: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 57
+UVM_INFO my_scoreboard.sv(143) @ 515: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_driver.sv(77) @ 515: uvm_test_top.env.agn.drv [DRIVER] Sending packet to scoreboard
+UVM_INFO my_scoreboard.sv(38) @ 515: uvm_test_top.env.scb [SCBD] DRV Packet Received
+10111100
+11110111
+i is 0 contr; 1 and data 60
+i is           0 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 1 contr; 1 and data 60
+i is           1 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 2 contr; 1 and data 60
+i is           2 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 3 contr; 1 and data 60
+i is           3 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01100000110 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 4 contr; 0 and data 74
+UVM_INFO my_scoreboard.sv(104) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 00101010101 
+UVM_INFO my_scoreboard.sv(106) @ 515: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 5 contr; 1 and data 60
+i is           5 encoded data 111110011100000110
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111001 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 6 contr; 0 and data 30
+UVM_INFO my_scoreboard.sv(104) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01000011011 
+UVM_INFO my_scoreboard.sv(106) @ 515: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 0
+i is 7 contr; 0 and data 209
+UVM_INFO my_scoreboard.sv(104) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01000110110 
+UVM_INFO my_scoreboard.sv(106) @ 515: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 0
+i is 8 contr; 0 and data 252
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011100001 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 9 contr; 0 and data 255
+UVM_INFO my_scoreboard.sv(104) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01010110001 
+UVM_INFO my_scoreboard.sv(106) @ 515: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 10 contr; 1 and data 247
+i is          10 encoded data 11101010000001010111
+UVM_INFO my_scoreboard.sv(104) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are 5 = 01110101000 
+UVM_INFO my_scoreboard.sv(106) @ 515: uvm_test_top.env.scb [SCBD] Disparity remains same, New disparity is 1
+i is 11 contr; 0 and data 98
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01011010011 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 12 contr; 0 and data 137
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01001010010 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 13 contr; 0 and data 231
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 01110001110 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+i is 14 contr; 0 and data 125
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00100011100 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 1
+i is 15 contr; 1 and data 188
+i is          15 encoded data 111110101100000101
+UVM_INFO my_scoreboard.sv(99) @ 515: uvm_test_top.env.scb [SCBD] Number of One's are not 5 = 00011111010 
+UVM_INFO my_scoreboard.sv(101) @ 515: uvm_test_top.env.scb [SCBD] Disparity flipped, New disparity is 0
+1001111100 ref 11111001
+110000011 ref 1100000110
+1001111100 ref 11111001
+110000011 ref 1100000110
+1010101010 ref 101010101
+1001111100 ref 11111001
+1101100001 ref 1000011011
+110110001 ref 1000110110
+1000011100 ref 11100001
+1000110101 ref 1010110001
+1010111 ref 1110101000
+1100101101 ref 1011010011
+100101001 ref 1001010010
+111000111 ref 1110001110
+11100010 ref 100011100
+101111100 ref 11111010
+----------------------------------------
+Name       Type              Size  Value
+----------------------------------------
+req        my_sequence_item  -     @1057
+  st       integral          1     'h1  
+  dataout  da(integral)      16    -    
+    [0]    integral          10    'h27c
+    [1]    integral          10    'h183
+    [2]    integral          10    'h27c
+    [3]    integral          10    'h183
+    [4]    integral          10    'h2aa
+    ...    ...               ...   ...  
+    [11]   integral          10    'h32d
+    [12]   integral          10    'h129
+    [13]   integral          10    'h1c7
+    [14]   integral          10    'he2 
+    [15]   integral          10    'h17c
+  datain   da(integral)      16    -    
+    [0]    integral          8     'h3c 
+    [1]    integral          8     'h3c 
+    [2]    integral          8     'h3c 
+    [3]    integral          8     'h3c 
+    [4]    integral          8     'h4a 
+    ...    ...               ...   ...  
+    [11]   integral          8     'h62 
+    [12]   integral          8     'h89 
+    [13]   integral          8     'he7 
+    [14]   integral          8     'h7d 
+    [15]   integral          8     'hbc 
+----------------------------------------
+UVM_INFO my_moniter.sv(40) @ 525: uvm_test_top.env.agn.mon [Monitor] time 525
+UVM_INFO my_moniter.sv(43) @ 525: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 159
+UVM_INFO my_scoreboard.sv(143) @ 525: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 535: uvm_test_top.env.agn.mon [Monitor] time 535
+UVM_INFO my_moniter.sv(43) @ 535: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 1e3
+UVM_INFO my_scoreboard.sv(143) @ 535: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 545: uvm_test_top.env.agn.mon [Monitor] time 545
+UVM_INFO my_moniter.sv(43) @ 545: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 296
+UVM_INFO my_scoreboard.sv(143) @ 545: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 555: uvm_test_top.env.agn.mon [Monitor] time 555
+UVM_INFO my_moniter.sv(43) @ 555: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 1b2
+UVM_INFO my_scoreboard.sv(143) @ 555: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_moniter.sv(40) @ 565: uvm_test_top.env.agn.mon [Monitor] time 565
+UVM_INFO my_moniter.sv(43) @ 565: uvm_test_top.env.agn.mon [Monitor] dataout from monitor 283
+UVM_INFO my_scoreboard.sv(143) @ 565: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 1
+UVM_INFO my_scoreboard.sv(34) @ 575: uvm_test_top.env.scb [SCBD] Mon Packet Received
+--------------------------------------------
+Name           Type              Size  Value
+--------------------------------------------
+sequence_item  my_sequence_item  -     @1065
+  st           integral          1     'h0  
+  dataout      da(integral)      16    -    
+    [0]        integral          10    'h27c
+    [1]        integral          10    'h183
+    [2]        integral          10    'h27c
+    [3]        integral          10    'h183
+    [4]        integral          10    'h2aa
+    ...        ...               ...   ...  
+    [11]       integral          10    'h159
+    [12]       integral          10    'h1e3
+    [13]       integral          10    'h296
+    [14]       integral          10    'h1b2
+    [15]       integral          10    'h283
+  datain       da(integral)      0     -    
+--------------------------------------------
+UVM_INFO my_moniter.sv(49) @ 575: uvm_test_top.env.agn.mon [Monitor] time 575 sending packet to scoreboaed
+time 575 sending packet to scoreboaed
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 110000011 and expected = 0110000011
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010101010 and expected = 1010101010
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1001111100 and expected = 1001111100
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1101100001 and expected = 1101100001
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 110110001 and expected = 0110110001
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1000011100 and expected = 1000011100
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1000110101 and expected = 1000110101
+UVM_INFO my_scoreboard.sv(135) @ 575: uvm_test_top.env.scb [scoreboard] pkt passed got = 1010111 and expected = 0001010111
+UVM_ERROR my_scoreboard.sv(138) @ 575: uvm_test_top.env.scb [scoreboard] pkt failed got = 101011001 and expected = 1100101101
+UVM_ERROR my_scoreboard.sv(138) @ 575: uvm_test_top.env.scb [scoreboard] pkt failed got = 111100011 and expected = 100101001
+UVM_ERROR my_scoreboard.sv(138) @ 575: uvm_test_top.env.scb [scoreboard] pkt failed got = 1010010110 and expected = 111000111
+UVM_ERROR my_scoreboard.sv(138) @ 575: uvm_test_top.env.scb [scoreboard] pkt failed got = 110110010 and expected = 11100010
+UVM_ERROR my_scoreboard.sv(138) @ 575: uvm_test_top.env.scb [scoreboard] pkt failed got = 1010000011 and expected = 101111100
+UVM_INFO my_scoreboard.sv(143) @ 585: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 595: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO my_scoreboard.sv(143) @ 605: uvm_test_top.env.scb [scoreboard] size mismatch mon size = 0  = drv 0
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_objection.svh(1270) @ 605: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_report_server.svh(847) @ 605: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   82
+UVM_INFO :  302
 UVM_WARNING :    0
-UVM_ERROR :    8
+UVM_ERROR :    5
 UVM_FATAL :    0
 ** Report counts by id
-[DRIVER]     2
-[Monitor]    32
+[DRIVER]     6
+[Monitor]    96
 [RNTST]     1
-[SCBD]    22
+[SCBD]    98
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVMTOP]     1
-[scoreboard]    30
+[scoreboard]   103
 
 $finish called from file "/home/morris/uvm-1.2/src/base/uvm_root.svh", line 517.
-$finish at simulation time                  215
+$finish at simulation time                  605
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 215 ns
-CPU Time:      0.510 seconds;       Data structure size:   0.2Mb
-Thu May 13 16:27:17 2021
+Time: 605 ns
+CPU Time:      0.590 seconds;       Data structure size:   0.2Mb
+Sun May 16 12:13:34 2021
