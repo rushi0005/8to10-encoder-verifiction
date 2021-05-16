@@ -318,7 +318,7 @@ XRDP_SESSION=1
 XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_12
 XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_12
 XMODIFIERS=@im=none
-XDG_SESSION_ID=139343
+XDG_SESSION_ID=78761
 XDG_RUNTIME_DIR=/run/user/245451061
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/home/015310906@SJSUAD.SJSU.EDU/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -345,10 +345,10 @@ STRELEASE=current
 STDB=/home/015310906@SJSUAD.SJSU.EDU/sentaurus
 SSH_AUTH_SOCK=/run/user/245451061/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=20893
+SSH_AGENT_PID=1415
 SNPSLMS_LICENSE_FILE=27000@cadence3.engr.sjsu.edu:/apps/synopsys/license/current-license-key
 SKIP_CDS_DIALOG=
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/20577,unix/unix:/tmp/.ICE-unix/20577
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1089,unix/unix:/tmp/.ICE-unix/1089
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_IM_MODULE=xim
@@ -382,7 +382,7 @@ HISTCONTROL=ignoredups
 GTK_IM_MODULE=gtk-im-context-simple
 GROUP=domain users
 GNOME_TERMINAL_SERVICE=:1.117
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/9c7cb493_333a_43c2_93f3_c2278bfdb7ef
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/3ef4838e_31d1_4c26_b887_9f16b9141784
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
 GJS_DEBUG_OUTPUT=stderr
 ENV=/usr/share/Modules/init/profile.sh
@@ -403,9 +403,9 @@ BASH_ENV=/usr/share/Modules/init/bash
 ARCH=linux
 0
 161
-1621057039 enc8to10.v
-1621057245 runningDisparity.v
-1621050067 kcode8to10.v
+1621140307 enc8to10.v
+1621139247 runningDisparity.v
+1621135727 kcode8to10.v
 1621057735 enc5to6.v
 1621055195 enc3to4.v
 1620592200 crc32.v
@@ -570,5 +570,5 @@ ARCH=linux
 1607401344 /apps/synopsys/vcs/R-2020.12/linux/lib/liberrorinf.so
 1607401192 /apps/synopsys/vcs/R-2020.12/linux/lib/libsnpsmalloc.so
 1607401539 /apps/synopsys/vcs/R-2020.12/linux/lib/libvfs.so
-1621057767 simv.daidir
+1621140345 simv.daidir
 -1 partitionlib

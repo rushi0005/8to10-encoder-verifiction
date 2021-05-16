@@ -25,7 +25,7 @@ module runningDisparity #(parameter WIDTH=10) (input clk,
 		case (currentState)
 			S0: begin
 				//RDout = 1'b0;
-				if ((countOnes(dataout) == CWIDTH && pushout) || startin) begin
+				if ((countOnes(dataout) == CWIDTH && pushout)) begin
 					nextState = S0;
 					RDout = 1'b0;
 				end
