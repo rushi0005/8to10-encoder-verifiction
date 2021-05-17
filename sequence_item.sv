@@ -27,7 +27,7 @@ class my_sequence_item extends uvm_sequence_item ;
 					datain[i] == 8'd60 ;
 				else if (i == datain.size -1)
 					datain[i] == 8'd188 ;
-				else !(datain[i] inside{8'd60 ,8'd188});}
+				else datain[i] inside{8'd0 ,8'd255};}
 	
 	`uvm_object_utils_begin(my_sequence_item)
 		`uvm_field_int( st,         UVM_ALL_ON)
