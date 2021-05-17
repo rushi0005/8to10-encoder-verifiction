@@ -25,11 +25,11 @@ module enc8to10(input clk,
          S2_K285 = 2'd2;
 
   wire Kbit;  // control bit
-  wire RD6B, RD4B, RD, curRD; // running disparity    0 for -1  and 1 for 1
+  wire RD, curRD; // running disparity    0 for -1  and 1 for 1
   wire [31:0] crcResult;
   reg  [31:0] crcData;
  
-  reg curRD6B, curRD4B, curRD0; 
+  reg curRD0; 
   wire [9:0] outTemp, kcode, kcodeCRC0, kcodeCRC1, firstCRC, secondCRC, thirdCRC, fourthCRC;
   reg [9:0] trueOutput;
   reg [3:0] counterK281, counterK285;
@@ -41,9 +41,6 @@ module enc8to10(input clk,
   
   // the running disparity will always be active when trueOutput is available (pushout is high).
   // the RD FSM will reset at the start of sequence (startin is high)
-  runningDisparity #(.WIDTH(6)) rd6b (.clk(clk), .reset(reset), .dataout(trueOutput[5:0]), .startin(startin), .RDout(RD6B), .pushout(pushout));
-
-  runningDisparity #(.WIDTH(4)) rd4b (.clk(clk), .reset(reset), .dataout(trueOutput[9:6]), .startin(startin), .RDout(RD4B), .pushout(pushout));
 
   runningDisparity #(.WIDTH(10)) rd10b (.clk(clk), .reset(reset), .dataout(trueOutput), .startin(startin), .RDout(RD), .pushout(pushout));
 
@@ -84,12 +81,8 @@ module enc8to10(input clk,
 always @(posedge clk or posedge reset) begin
 	if (reset) begin
 		curRD0 <= 'd0;
-		curRD4B <= 'd0;
-		curRD6B <= 'd0;
 	end else begin
 		curRD0 <= RD;
-		curRD4B <= RD4B;
-		curRD6B <= RD6B;
 	end
 end
 

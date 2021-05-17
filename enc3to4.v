@@ -7,7 +7,8 @@ module enc3to4 (input [2:0] datain,
 	wire RD0;
 
 	assign dataout = fghj_d;
-	assign RD0 = ((lower == 'd3) || (lower == 'd5) || (lower == 'd6) || (lower == 'd9) || (lower == 'd10) || (lower == 'd11) || (lower == 'd12) || (lower == 'd13) || (lower == 'd14) || (lower == 'd17) || (lower == 'd18) || (lower == 'd19) || (lower == 'd20) || (lower == 'd21) || (lower == 'd22) || (lower == 'd25) || (lower == 'd26) || (lower == 'd28) ) ? ~RD : RD;
+	assign RD0 = ((lower == 'd3) || (lower == 'd5) || (lower == 'd6) || (lower == 'd7) ||  (lower == 'd9) || (lower == 'd10) || (lower == 'd11) || (lower == 'd12) || (lower == 'd13) || (lower == 'd14) || (lower == 'd17) || (lower == 'd18) || (lower == 'd19) || (lower == 'd20) || (lower == 'd21) || (lower == 'd22) || (lower == 'd25) || (lower == 'd26) || (lower == 'd28) ) ? ~RD : RD;
+//	assign RD0 = RD;
 
   always @(*) begin
   
