@@ -1,9 +1,13 @@
+//--------------------------------------------------------------------------------------------------//
+//---------------This is env class for 8to10 bit encoder--------------------------------------------//
+//--------------------------------------------------------------------------------------------------//
 
 class my_env extends uvm_env ;
 	`uvm_component_utils(my_env);
 
-	my_agent agn ;
-	my_scoreboard scb ;
+	my_agent agn      ;        //agent class handle
+	my_scoreboard scb ;        //scoreborad class handle
+
 	function new (string name = "",uvm_component parent);
 		super.new(name,parent);
 	endfunction

@@ -20,10 +20,11 @@ module crc32
 	
     // Declare a 32x256 LUT for the CRC remainder table	
 	// Construct the "table[(crc & 0xff) ^ octet]" operation
-	assign crc32_lut_in = crc32_out_buff[7:0] ^ crc32_in;
+	assign crc32_lut_in =  valid ? crc32_out_buff[7:0] ^ crc32_in : crc32_out_buff[7:0]  ;
 	
     always @(*)
 	begin
+	if(valid) begin
         case ( crc32_lut_in )
 	        8'd0   : crc32_table = 32'h0;
 	        8'd1   : crc32_table = 32'h77073096;
@@ -283,6 +284,7 @@ module crc32
 	        8'd255 : crc32_table = 32'h2d02ef8d;
             default: crc32_table = 32'h0;			
 	    endcase
+		end
 	end
 
 
@@ -294,8 +296,12 @@ module crc32
         else if (valid) begin 
       		crc32_out_buff  <= (crc32_out_buff >> 8) ^ crc32_table;
 		end
+	else if (valid == 0) begin
+		crc32_out_buff  <= crc32_out_buff ;
+	end
+	
     end
 	 
-	assign crc32_out = ~crc32_out_buff; 
+	assign crc32_out =  ~crc32_out_buff  ; 
 	 
 endmodule

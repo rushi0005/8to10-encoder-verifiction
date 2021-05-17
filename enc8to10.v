@@ -78,7 +78,7 @@ module enc8to10(input clk,
   kcode8to10 kc2 (.datain(K237), .RD(curRD), .dataout(kcodeCRC1));
 
   // CRC calculation of the packet
-  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .valid(pushin && (currentState == S1_DATA) && (datain[7:0] != K285)), 
+  crc32 crc0 (.clk(clk), .rst(reset), .crc32_in(datain[7:0]), .valid(pushin && (currentState == S1_DATA) && (datain[7:0] != K285) && ( Kbit==0)), 
               .is_S1DATA(currentState == S1_DATA) ,.crc32_out(crcResult));
 
 always @(posedge clk or posedge reset) begin

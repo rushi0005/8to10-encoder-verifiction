@@ -1,10 +1,15 @@
+//--------------------------------------------------------------------------------------------------//
+//---------------This is Agent class for 8to10 bit encoder------------------------------------------//
+//--------------------------------------------------------------------------------------------------//
+
+
 
 class my_agent extends uvm_agent;
 	`uvm_component_utils(my_agent)
 
-	my_driver drv ;
-	my_sequencer sqr ;
-	my_monitor   mon ;
+	my_driver drv    ;              //driver class handle
+	my_sequencer sqr ;              //sequencer class handle
+	my_monitor   mon ;              //monitor class handle 
 
 	function new(string name = "my_agent", uvm_component parent);
 		super.new(name,parent);

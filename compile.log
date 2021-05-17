@@ -2,7 +2,7 @@ Command: vcs -sverilog -timescale=1ns/1ns +vpi +define+UVM_OBJECT_MUST_HAVE_CONS
 +incdir+/home/morris/uvm-1.2/src /home/morris/uvm-1.2/src/uvm.sv /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc \
 -CFLAGS -DVCS -l compile.log -sverilog testbench_top.sv
                          Chronologic VCS (TM)
-            Version R-2020.12 -- Sun May 16 12:13:23 2021
+            Version R-2020.12 -- Sun May 16 16:27:26 2021
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -313,16 +313,16 @@ Back to file 'testbench_top.sv'.
 Parsing included file 'my_scoreboard.sv'.
 
 Warning-[IPDW] Identifier previously declared
-my_scoreboard.sv, 15
+my_scoreboard.sv, 23
   Second declaration for identifier 'crc_out' ignored
-  Identifier 'crc_out' previously declared as int. [my_scoreboard.sv, 11]
+  Identifier 'crc_out' previously declared as bit. [my_scoreboard.sv, 16]
 
 
 Warning-[IPDW] Identifier previously declared
-my_scoreboard.sv, 162
+my_scoreboard.sv, 174
   Second declaration for identifier 'crc_out' ignored
   Identifier 'crc_out' previously declared as output port. [my_scoreboard.sv, 
-  159]
+  172]
 
 Back to file 'testbench_top.sv'.
 Parsing included file 'my_env.sv'.
@@ -356,7 +356,7 @@ uvm_pkg, "rushi::\my_scoreboard::write (this.m_imp, t);"
 
 
 Warning-[TEIF] Task enabled inside a function
-my_scoreboard.sv, 39
+my_scoreboard.sv, 53
 rushi, "rushi::\my_scoreboard::ref_model_convert (this, pkt);"
   Task 'my_scoreboard::ref_model_convert' is enabled inside function 
   'uvm_analysis_imp#(rushi::my_sequence_item,rushi::my_scoreboard)::write', it
@@ -364,7 +364,7 @@ rushi, "rushi::\my_scoreboard::ref_model_convert (this, pkt);"
 
 
 Warning-[TEIF] Task enabled inside a function
-my_scoreboard.sv, 58
+my_scoreboard.sv, 72
 rushi, "rushi::\my_scoreboard::calculate_crc (this, pkt, this.crc_out);"
   Task 'my_scoreboard::calculate_crc' is enabled inside function 
   'uvm_analysis_imp#(rushi::my_sequence_item,rushi::my_scoreboard)::write', it
@@ -372,7 +372,7 @@ rushi, "rushi::\my_scoreboard::calculate_crc (this, pkt, this.crc_out);"
 
 
 Warning-[TEIF] Task enabled inside a function
-my_scoreboard.sv, 110
+my_scoreboard.sv, 125
 rushi, "rushi::\my_scoreboard::expt_data (this, pkt);"
   Task 'my_scoreboard::expt_data' is enabled inside function 
   'uvm_analysis_imp#(rushi::my_sequence_item,rushi::my_scoreboard)::write', it
@@ -382,25 +382,22 @@ Starting vcs inline pass...
 
 10 modules and 0 UDP read.
 recompiling package vcs_paramclassrepository
-recompiling package _vcs_DPI_package
-recompiling package uvm_pkg
-recompiling module intf
 recompiling package rushi
-recompiling module enc3to4
-recompiling module enc5to6
-recompiling module kcode8to10
 recompiling module enc8to10
-recompiling module top
-All of 10 modules done
+3 of 10 modules done
+	However, due to incremental compilation, only 3 modules need to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -z notext -m elf_i386  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so \
+objs/amcQw_d.o 
+rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -m32 -m32 -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/apps/synopsys/vcs/R-2020.12/linux/lib -L/apps/synopsys/vcs/R-2020.12/linux/lib \
--Wl,-rpath-link=./  uvm_dpi.o   objs/amcQw_d.o   _23499_archive_1.so  SIM_l.o    \
-rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
+-Wl,-rpath-link=./  uvm_dpi.o     _556_archive_1.so _prev_archive_1.so _cuarc0.so \
+SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
 /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_save_restore_new.o /apps/synopsys/vcs/R-2020.12/linux/lib/ctype-stubs_32.a \
 -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 6.661 seconds to compile + .448 seconds to elab + .344 seconds to link
+CPU time: 6.235 seconds to compile + .476 seconds to elab + .406 seconds to link

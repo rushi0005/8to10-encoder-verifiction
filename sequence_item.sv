@@ -1,3 +1,9 @@
+//--------------------------------------------------------------------------------------------------//
+//---------------This is sequence item class for 8to10 bit encoder----------------------------------//
+//--------------------------------------------------------------------------------------------------//
+
+
+
 class my_sequence_item extends uvm_sequence_item ;
 	rand bit st                ;   // 0 - drive k signal in between datain
 	rand bit [7:0] datain[]    ;   // input data
@@ -14,14 +20,14 @@ class my_sequence_item extends uvm_sequence_item ;
 		super.new(name);
 	endfunction
 	
-	constraint a_b {st dist {0:= 40 , 1:=60};}
+	constraint a_b {st dist {0:= 60 , 1:=40};}
 	constraint a_c {datain.size() inside {[8:12]};			
 			foreach(datain[i])	
 				if (i < 4)                     
 					datain[i] == 8'd60 ;
 				else if (i == datain.size -1)
 					datain[i] == 8'd188 ;
-				else datain[i] inside{[0:256]};}
+				else !(datain[i] inside{8'd60 ,8'd188});}
 	
 	`uvm_object_utils_begin(my_sequence_item)
 		`uvm_field_int( st,         UVM_ALL_ON)

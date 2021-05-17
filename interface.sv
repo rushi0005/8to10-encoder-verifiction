@@ -1,31 +1,15 @@
+//--------------------------------------------------------------------------------------------------//
+//---------------This is Interface for 8to10 bit encoder--------------------------------------------//
+//--------------------------------------------------------------------------------------------------//
 
 interface intf(input logic clk, input logic reset);
 
 	logic       pushin   ;// signal indiction data is present for encoding
-	logic [8:0] datain   ;// 
-	logic       startin  ;//
-	logic       pushout  ;//
-	logic [9:0] dataout  ;//
-	logic       startout ;//
-	logic [4:0] datain_size ;
+	logic [8:0] datain   ;// Input data to DUT
+	logic       startin  ;// Indicate 1st data is 28.1
+	logic       pushout  ;// Output of DUT
+	logic [9:0] dataout  ;// Output 10 bit data
+	logic       startout ;// output
 
-/*
-	clocking driver_cb @(posedge clk);
-		output pushout , dataout, startout;
-		input pushin,  datain,   startin ;
-	endclocking
-
-	clocking dut_cb     @(posedge clk );
-		input  pushin,  datain,   startin ;
-		output pushout, dataout, startout ;
-	endclocking
-
-	clocking monitor_cb @(posedge clk );
-		input pushout , dataout, startout, pushin,  datain,   startin ;
-	endclocking
-
-	modport driver (clocking driver_cb);
-	modport dut    (clocking dut_cb);
-	modport monitor(clocking monitor_cb);*/
 
 endinterface 
