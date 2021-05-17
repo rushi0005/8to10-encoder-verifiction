@@ -2,7 +2,7 @@ Command: vcs -sverilog -timescale=1ns/1ns +vpi +define+UVM_OBJECT_MUST_HAVE_CONS
 +incdir+/home/morris/uvm-1.2/src /home/morris/uvm-1.2/src/uvm.sv /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc \
 -CFLAGS -DVCS -l compile.log -sverilog testbench_top.sv
                          Chronologic VCS (TM)
-            Version R-2020.12 -- Sun May 16 19:05:27 2021
+            Version R-2020.12 -- Sun May 16 21:57:51 2021
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -381,7 +381,10 @@ rushi, "rushi::\my_scoreboard::expt_data (this, pkt);"
 Starting vcs inline pass...
 
 10 modules and 0 UDP read.
-	However, due to incremental compilation, no re-compilation is necessary.
+recompiling package vcs_paramclassrepository
+recompiling package rushi
+Both modules done.
+	However, due to incremental compilation, only 2 modules need to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -z notext -m elf_i386  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so \
 objs/amcQw_d.o 
@@ -389,11 +392,11 @@ rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -m32 -m32 -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/apps/synopsys/vcs/R-2020.12/linux/lib -L/apps/synopsys/vcs/R-2020.12/linux/lib \
--Wl,-rpath-link=./  uvm_dpi.o     _11029_archive_1.so _prev_archive_1.so _cuarc0.so \
+-Wl,-rpath-link=./  uvm_dpi.o     _25638_archive_1.so _prev_archive_1.so _cuarc0.so \
 SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
 /apps/synopsys/vcs/R-2020.12/linux/lib/vcs_save_restore_new.o /apps/synopsys/vcs/R-2020.12/linux/lib/ctype-stubs_32.a \
 -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 5.374 seconds to compile + .477 seconds to elab + .405 seconds to link
+CPU time: 6.136 seconds to compile + .491 seconds to elab + .398 seconds to link

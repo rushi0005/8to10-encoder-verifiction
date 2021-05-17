@@ -5,7 +5,7 @@
 
 
 class my_sequence_item extends uvm_sequence_item ;
-	rand bit st                ;   // 0 - drive k signal in between datain
+	rand bit st                ;   // 0 - drive k signal in between datain, 1 - drive only d signal
 	rand bit [7:0] datain[]    ;   // input data
 	bit cntr[]                 ;   // 9th bit of datain, control signal 1 - ksignal
 
@@ -20,14 +20,14 @@ class my_sequence_item extends uvm_sequence_item ;
 		super.new(name);
 	endfunction
 	
-	constraint a_b {st dist {0:= 60 , 1:=40};}
-	constraint a_c {datain.size() inside {[8:12]};			
+	constraint a_b {st dist {2'd0:= 50, 2'd1:=50};}
+	constraint a_c {datain.size() inside {[15:20]};
 			foreach(datain[i])	
 				if (i < 4)                     
 					datain[i] == 8'd60 ;
 				else if (i == datain.size -1)
 					datain[i] == 8'd188 ;
-				else datain[i] inside{8'd0 ,8'd255};}
+				else datain[i] inside{[8'd0 :8'd255]};}
 	
 	`uvm_object_utils_begin(my_sequence_item)
 		`uvm_field_int( st,         UVM_ALL_ON)

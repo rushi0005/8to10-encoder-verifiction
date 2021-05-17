@@ -51,8 +51,7 @@ class my_monitor extends uvm_monitor  ;
                 		prev_startout = 0;
 		        	trans_out.write(res);	
 			       `uvm_info("Monitor",$psprintf("time %0t sending packet to scoreboaed",$time),UVM_NONE);
-			       $display("time %0t sending packet to scoreboaed",$time);
-			  
+			       
             		end
 		end
 	endtask
